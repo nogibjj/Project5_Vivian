@@ -1,6 +1,6 @@
-from main import f
+from main import main
    
 def test_main():
-    f()
+    assert main()==1
 
 
