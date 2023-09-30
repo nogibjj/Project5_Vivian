@@ -25,5 +25,7 @@ def main():
 
     # Close the connection when done
     conn.close()
+    return 1 
+    
 if __name__ == "__main__":
     main()
