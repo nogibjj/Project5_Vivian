@@ -1,5 +1,5 @@
 from lib.CRUD import (
-import_data_from_csv,add_house,update_house,delete_house,get_all_houses)
+close_connection,create_house,update_house,delete_house,read_all_houses)
 from lib.load_data import load
 import matplotlib.pyplot as plt
 
