@@ -1,11 +1,10 @@
 from lib.CRUD import (
 close_connection,create_house,update_house,delete_house,read_all_houses)
 from lib.load_data import load
-import matplotlib.pyplot as plt
 
 def main():
     # Example Usage
-    load('data.csv')  # Import data from CSV
+    load('california_housing_train.csv')  # Import data from CSV
     create_house(-122.5, 37.7, 40, 2000, 350, 1500, 350, 8.5, 500000)  # Create
     houses = read_all_houses()  # Read
     print("All Houses:", houses)
