@@ -22,7 +22,7 @@ def load(dataset="california_housing_train.csv"):
     ''')
 
     # Read the CSV file and insert data into the SQLite database
-    with open('data.csv', 'r') as csv_file:
+    with open(dataset, 'r') as csv_file:
         csv_reader = csv.DictReader(csv_file)
         for row in csv_reader:
             cursor.execute('''
