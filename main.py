@@ -1,37 +1,29 @@
-import pandas as pd
+from lib.CRUD import (
+import_data_from_csv,add_house,update_house,delete_house,get_all_houses)
+from lib.load_data import load
 import matplotlib.pyplot as plt
 
-def f():
-    df=pd.read_csv("california_housing_train.csv")
+def main():
+    import_data_from_csv('california_housing_train.csv')  # Import data from CSV
+    add_house(-122.5, 37.7, 40, 2000, 350, 1500, 350, 8.5, 500000)  # Create
+    houses = get_all_houses()  # Read
+    print("All Houses:", houses)
 
-    print(df.shape)
-    print(df.shape[0])
-    print(df.describe())
+    # Assuming the ID of the house to update is 1
+    update_house(1, -122.5, 37.7, 45, 2500, 400, 1600, 400, 9.0, 550000)  # Update
 
-    # Bottom 3 house price
-    sorted_by_value=df.sort_values('median_house_value', ascending = True)[:3]
-    # Calculate the median/mean/standard deviation for the 2022 numbers
-    median=df['median_house_value'].dropna().median()
-    mean=df['median_house_value'].dropna().mean()
-    sd=df['median_house_value'].dropna().std()
-    print("Bottom 3 house price: "+str(sorted_by_value))
-    print("median is: "+ str(median))
-    print("mean is: "+str(mean))
-    print("standard deviation is: "+str(sd))
+    # Get and print all houses after update
+    updated_houses = get_all_houses()  # Read after update
+    print("Updated Houses:", updated_houses)
 
-    # Plot a histogram for the house value
-    data = df['median_house_value'].dropna()
+    # Assuming the ID of the house to delete is 1
+    delete_house(1)  # Delete
 
-    # Create histogram
-    plt.hist(data, bins=5, edgecolor="k")
+    # Get and print all houses after deletion
+    houses_after_deletion = get_all_houses()  # Read after deletion
+    print("Houses after Deletion:", houses_after_deletion)
 
-    # Add labels and title
-    plt.xlabel('median_house_value')
-    plt.ylabel('Frequency')
-    plt.title('Histogram of median house price')
-
-    # Show plot
-    plt.show()
-
+    # Close the connection when done
+    conn.close()
 if __name__ == "__main__":
-    f()
+    main()
