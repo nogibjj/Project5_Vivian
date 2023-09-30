@@ -21,7 +21,7 @@ def read_house_by_id(house_id):
     cursor.execute("SELECT * FROM houses WHERE id=?", (house_id,))
     # Fetch the result
     house = cursor.fetchone()
-    print("house with id="+str(house_id)+" has these info: "+house)
+    print("house with id="+str(house_id)+" has these info: "+str(house))
 
 
 # UPDATE: Update a house's data based on its ID 
