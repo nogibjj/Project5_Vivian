@@ -3,7 +3,6 @@ from lib.CRUD import (
     create_house,
     update_house,
     delete_house,
-    read_all_houses,
     read_house_by_id
 )
 from lib.load_data import load
