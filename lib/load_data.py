@@ -9,6 +9,7 @@ def load(dataset="california_housing_train.csv"):
     # Create a table named 'houses'
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS houses (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
         longitude DOUBLE,
         latitude DOUBLE,
         housing_median_age DOUBLE,
