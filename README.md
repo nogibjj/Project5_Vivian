@@ -26,7 +26,7 @@ Dataset attributes: "id","longitude","latitude","housing_median_age","total_room
 <img width="939" alt="Screen Shot 2023-09-30 at 11 44 04 AM" src="https://github.com/nogibjj/Project5_Vivian/assets/143654445/aa1f500f-2b0a-49b9-8dc3-27022c279d79">
 
 # CRUD Operations
-## functions in lib/CRUD.py
+### functions in lib/CRUD.py
     close_connection: used to close the db connection
     create_house: create a new house data
     update_house: update a house data by its id
